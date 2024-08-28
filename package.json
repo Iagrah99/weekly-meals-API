@@ -1,0 +1,24 @@
+{
+  "name": "weekly-meals-api",
+  "version": "1.0.0",
+  "description": "A backend rest API which aims to keep track of weekly meals by utilising CRUD operations which allows users to retrieve, create, update and delete meals from their account.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Ian Graham",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.6.0"
+  }
+}
