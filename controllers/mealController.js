@@ -23,6 +23,7 @@ const addMeal = asyncHandler(async (req, res) => {
   const meal = await Meal.create({
     name: req.body.name,
     user: req.user.id,
+    source: req.body.source,
   });
   res.status(201).json(meal);
 });

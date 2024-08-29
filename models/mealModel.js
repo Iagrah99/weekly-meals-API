@@ -11,6 +11,10 @@ const mealSchema = mongoose.Schema(
       type: String,
       required: [true, 'Please add a text value'],
     },
+    source: {
+      type: String,
+      required: false,
+    },
   },
   {
     timestamps: true,
