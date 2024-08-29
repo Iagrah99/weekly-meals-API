@@ -5,7 +5,7 @@ const {
   addMeal,
   updateMeal,
   removeMeal,
-} = require('../controllers/mealControllers');
+} = require('../controllers/mealController');
 
 router.route('/').get(getMeals).post(addMeal);
 router.route('/:id').put(updateMeal).delete(removeMeal);
