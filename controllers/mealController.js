@@ -8,7 +8,7 @@ const User = require('../models/userModel');
 // @access  Public
 const getMeals = asyncHandler(async (req, res) => {
   const meals = await Meal.find({ user: req.user.id });
-  res.status(200).json(meals);
+  res.status(200).json({ meals: meals });
 });
 
 // @desc    Add Meal

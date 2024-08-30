@@ -1,0 +1,85 @@
+{
+  "GET /api": {
+    "description": "Responds with a JSON representation of all the avaliable HTTP endpoints of the API."
+  },
+  "GET /api/meals": {
+    "description": "Responds with an array of all the meals belonging to the logged in user.",
+    "exampleResponse": {
+      "meals": [
+        {
+          "user": "66d2037a137b9a8e9b128ce8",
+          "name": "Spaghetti Bolognese",
+          "source": "BBC Good Food",
+          "_id": "66d20553e0839bf29df12ad7",
+          "createdAt": "2024-08-30T17:45:55.746Z",
+          "updatedAt": "2024-08-30T17:45:55.746Z",
+          "__v": 0
+        }
+      ]
+    }
+  },
+  "POST /api/meals": {
+    "description": "Creates a meal and adds it to the array of meals belonging to that user, and responds with that meal.",
+    "exampleRequest": {
+      "name": "Spaghetti Bolognese",
+      "source": "BBC Good Food"
+    },
+    "exampleResponse": {
+      "user": "66d2037a137b9a8e9b128ce8",
+      "name": "Spaghetti Bolognese",
+      "source": "BBC Good Food",
+      "_id": "66d20553e0839bf29df12ad7",
+      "createdAt": "2024-08-30T17:45:55.746Z",
+      "updatedAt": "2024-08-30T17:45:55.746Z",
+      "__v": 0
+    }
+  },
+  "PUT /api/meals/:id": {
+    "description": "Updates the name and/or source of the meal with the specified meal id, and responds with the updated meal.",
+    "exampleRequest": {
+      "name": "Spag bol"
+    },
+    "exampleResponse": {
+      "user": "66d2037a137b9a8e9b128ce8",
+      "name": "Spag bol",
+      "source": "BBC Good Food",
+      "_id": "66d2078fda20b99dec85862c",
+      "createdAt": "2024-08-30T17:55:27.640Z",
+      "updatedAt": "2024-08-30T17:55:27.640Z",
+      "__v": 0
+    }
+  },
+  "DELETE /api/meals/:id": {
+    "description": "Deletes the meal from with the specified meal id from the users array of meals, and responds with that meal id.",
+    "exampleResponse": {
+      "id": "66d20845a4700a29d07ec7a4"
+    }
+  },
+  "POST /api/users": {
+    "description": "Registers the user and adds them to the array of existing users if their email is not already taken, and responds with the user's _id, name, email and bearer token.",
+    "exampleRequest": {
+      "name": "Test User",
+      "email": "test-user@test.com",
+      "password": "test123"
+    },
+    "exampleResponse": {
+      "_id": "66d2037a137b9a8e9b128ce8",
+      "name": "Test User",
+      "email": "test-user@test.com",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDIwMzdhMTM3YjlhOGU5YjEyOGNlOCIsImlhdCI6MTcyNTAzOTQ4MiwiZXhwIjoxNzI3NjMxNDgyfQ.W5H0J0cL_MYUAE0nAkNh2vYQ6lDOqhW9RWkM2NuqfXI"
+    }
+  },
+  "POST /api/users/login": {
+    "description": "Logs in the user if their login credentials are correct and their email is found within the array of existing users and responds with the user's _id, name, email and bearer token.",
+    "exampleRequest": {
+      "email": "test-user@test.com",
+      "password": "test123"
+    },
+    "exampleResponse": {
+      "_id": "66d2037a137b9a8e9b128ce8",
+      "name": "Test User",
+      "email": "test-user@test.com",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDIwMzdhMTM3YjlhOGU5YjEyOGNlOCIsImlhdCI6MTcyNTAzOTgxMSwiZXhwIjoxNzI3NjMxODExfQ.HRfA_ySzQoU6JimUA-7zUYuNPt_sKzKLKj6B0YL7H1A"
+    }
+  }
+}
